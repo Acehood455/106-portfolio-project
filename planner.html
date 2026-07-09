@@ -11,6 +11,7 @@
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- Global header and primary navigation -->
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="index.html" aria-label="Ace Taiwo home">
@@ -28,7 +29,7 @@
             <a class="nav-link" data-nav-link href="contact.html">Contact</a>
           </div>
           <div class="nav-actions">
-            <button class="icon-button" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
+            <button class="icon-button" type="button" data-theme-toggle aria-pressed="false">Dark</button>
             <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-panel">Menu</button>
           </div>
         </nav>
@@ -44,14 +45,15 @@
       </div>
     </header>
 
-    <main id="main-content" class="page">
+    <main id="main-content" class="page planner-page">
+      <!-- Interactive task planner powered by JavaScript -->
       <section class="section shell">
         <div class="section-heading reveal">
           <div class="eyebrow">Academic planner</div>
-          <h2>Plan tasks, mark them complete, and delete them</h2>
+          <h2>Keep track of what I need to finish</h2>
           <p class="subheading">
-            This page uses vanilla JavaScript, DOM manipulation, arrays, functions, and localStorage to
-            create an interactive task manager for academic planning.
+            I use this page to organize reading, assignments, and portfolio tasks. It’s a simple way to
+            keep my study work visible and manageable while I move through the semester.
           </p>
         </div>
 
@@ -63,13 +65,13 @@
               <input
                 type="text"
                 data-task-input
-                placeholder="Example: Read Chapter 4 and review notes"
+                placeholder="Example: Review lecture notes"
                 aria-label="Task title"
               />
               <button class="btn btn-primary" type="submit">Add Task</button>
             </form>
             <p class="muted">
-              Use this to track lectures, assignments, revision sessions, and deadlines.
+              Use this space for assignments, revision goals, or anything else I need to remember.
             </p>
 
             <div class="planner-stats" aria-label="Planner stats">
@@ -96,6 +98,7 @@
         </div>
       </section>
 
+      <!-- Reference table and planning tips -->
       <section class="section shell">
         <div class="two-col">
           <article class="section-card reveal">
@@ -132,22 +135,23 @@
           </article>
           <article class="section-card reveal">
             <div class="eyebrow">Planning tips</div>
-            <h2>How to use the planner well</h2>
+            <h2>How I use it</h2>
             <ul class="list">
               <li>Add one task for each focused study goal.</li>
-              <li>Mark it complete once the work is done.</li>
-              <li>Delete tasks that are no longer relevant.</li>
-              <li>Refresh the page and see tasks stay saved.</li>
+              <li>Mark it complete when the work is done.</li>
+              <li>Delete anything that is no longer relevant.</li>
+              <li>Refresh the page to see saved tasks stay in place.</li>
             </ul>
           </article>
         </div>
       </section>
 
+      <!-- Footer with repeated site links -->
       <footer class="footer">
         <div class="shell footer-inner">
           <div>
             <strong>Ace Taiwo</strong>
-            <div class="muted">COS 106 term project portfolio</div>
+            <div class="muted">COS 106 portfolio project </div>
           </div>
           <div class="footer-links">
             <a href="index.html">Home</a>

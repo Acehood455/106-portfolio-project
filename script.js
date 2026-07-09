@@ -3,21 +3,18 @@ const STORAGE_KEYS = {
   tasks: "portfolio-planner-tasks",
 };
 
-const themeButtonLabels = {
-  dark: "Dark",
-  light: "Light",
-};
-
+// Store the active theme so every page keeps the same appearance.
 function setTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem(STORAGE_KEYS.theme, theme);
 
   document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
     button.setAttribute("aria-pressed", String(theme === "dark"));
-    button.textContent = theme === "dark" ? "Light Mode" : "Dark Mode";
+    button.textContent = theme === "dark" ? "Light" : "Dark";
   });
 }
 
+// Initialize the saved theme or fall back to the user's system preference.
 function initTheme() {
   const savedTheme = localStorage.getItem(STORAGE_KEYS.theme);
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -31,6 +28,7 @@ function initTheme() {
   });
 }
 
+// Handle the mobile navigation panel and highlight the active page.
 function initNav() {
   const menuButton = document.querySelector("[data-menu-button]");
   const mobilePanel = document.querySelector("[data-mobile-panel]");
@@ -59,6 +57,7 @@ function initNav() {
   });
 }
 
+// Build the planner task list, update counters, and persist tasks in localStorage.
 function initPlanner() {
   const form = document.querySelector("[data-planner-form]");
   const input = document.querySelector("[data-task-input]");
@@ -76,6 +75,7 @@ function initPlanner() {
   function loadTasks() {
     try {
       const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.tasks) || "[]");
+      // Keep the stored data model as an array of task objects.
       return Array.isArray(parsed) ? parsed : [];
     } catch {
       return [];
@@ -97,6 +97,7 @@ function initPlanner() {
     list.innerHTML = "";
 
     if (!tasks.length) {
+      // Show a friendly empty state until the first task is added.
       const empty = document.createElement("div");
       empty.className = "task-empty";
       empty.textContent = "No tasks yet. Add your first study task to get started.";
@@ -187,6 +188,7 @@ function initPlanner() {
     const action = button.dataset.action;
 
     if (action === "toggle") {
+      // Flip the completion state without changing the rest of the task.
       tasks = tasks.map((task) => {
         if (task.id !== taskId) {
           return task;
@@ -196,6 +198,7 @@ function initPlanner() {
     }
 
     if (action === "delete") {
+      // Remove the selected task from the stored list.
       tasks = tasks.filter((task) => task.id !== taskId);
     }
 
@@ -206,6 +209,7 @@ function initPlanner() {
   renderTasks();
 }
 
+// Validate the contact form before allowing a submit message.
 function initContactForm() {
   const form = document.querySelector("[data-contact-form]");
   if (!form) {
@@ -232,6 +236,7 @@ function initContactForm() {
   }
 
   function clearErrors() {
+    // Reset inline errors and any prior success message.
     Object.keys(fields).forEach((fieldName) => setError(fieldName, ""));
     if (success) {
       success.classList.remove("is-visible");
@@ -243,6 +248,7 @@ function initContactForm() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
+  // Keep the phone check strict so only digits pass validation.
   function validatePhone(phone) {
     return /^\d+$/.test(phone);
   }
@@ -260,6 +266,7 @@ function initContactForm() {
 
     let firstInvalidField = null;
 
+    // Each field is required and gets its own inline error message.
     if (!values.name) {
       setError("name", "Name is required.");
       firstInvalidField = firstInvalidField || fields.name;
@@ -288,6 +295,7 @@ function initContactForm() {
       return;
     }
 
+    // Show a success state after validation passes.
     if (success) {
       success.textContent = "Message sent successfully. I will get back to you soon.";
       success.classList.add("is-visible");
@@ -297,6 +305,7 @@ function initContactForm() {
   });
 }
 
+// Fade sections into view as the user scrolls down the page.
 function initReveal() {
   const nodes = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window) || !nodes.length) {
@@ -322,6 +331,7 @@ function initReveal() {
   });
 }
 
+// Show a back-to-top button after the user scrolls a bit.
 function initBackToTop() {
   const button = document.querySelector("[data-back-to-top]");
   if (!button) {
@@ -339,6 +349,7 @@ function initBackToTop() {
   });
 }
 
+// Run every page feature after the DOM is ready.
 function init() {
   initTheme();
   initNav();
@@ -349,4 +360,3 @@ function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
-
