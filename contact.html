@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Ace Taiwo</title>
+    <meta name="description" content="Contact form with JavaScript validation." />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Ace Taiwo home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>Ace Taiwo</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <div class="nav-links">
+            <a class="nav-link" data-nav-link href="index.html">Home</a>
+            <a class="nav-link" data-nav-link href="about.html">About</a>
+            <a class="nav-link" data-nav-link href="projects.html">Projects</a>
+            <a class="nav-link" data-nav-link href="planner.html">Planner</a>
+            <a class="nav-link" data-nav-link href="contact.html">Contact</a>
+          </div>
+          <div class="nav-actions">
+            <button class="icon-button" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
+            <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-panel">Menu</button>
+          </div>
+        </nav>
+      </div>
+      <div class="shell mobile-panel" id="mobile-panel" data-mobile-panel>
+        <div class="mobile-links">
+          <a class="nav-link" data-nav-link href="index.html">Home</a>
+          <a class="nav-link" data-nav-link href="about.html">About</a>
+          <a class="nav-link" data-nav-link href="projects.html">Projects</a>
+          <a class="nav-link" data-nav-link href="planner.html">Planner</a>
+          <a class="nav-link" data-nav-link href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page">
+      <section class="section shell">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Contact</div>
+          <h2>Send a message</h2>
+          <p class="subheading">
+            The form below uses JavaScript validation to ensure every field is filled, the email is
+            formatted correctly, and the phone number contains digits only.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="form-card reveal">
+            <div class="form-success" data-form-success></div>
+            <form class="form-grid" data-contact-form novalidate>
+              <div class="form-row">
+                <label class="field-label" for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your full name" />
+                <div class="error" data-error-for="name"></div>
+              </div>
+
+              <div class="form-row">
+                <label class="field-label" for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="name@example.com" />
+                <div class="error" data-error-for="email"></div>
+              </div>
+
+              <div class="form-row">
+                <label class="field-label" for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="text" inputmode="numeric" placeholder="Only digits" />
+                <div class="error" data-error-for="phone"></div>
+              </div>
+
+              <div class="form-row">
+                <label class="field-label" for="message">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Write your message here"></textarea>
+                <div class="error" data-error-for="message"></div>
+              </div>
+
+              <button class="btn btn-primary" type="submit">Send Message</button>
+            </form>
+          </article>
+
+          <aside class="section-card reveal">
+            <div class="eyebrow">Contact details</div>
+            <h2>Reach me here</h2>
+            <div class="contact-stack">
+              <div class="contact-card">
+                <strong>Location</strong>
+                <div class="muted">Jos, Plateau State, Nigeria</div>
+              </div>
+              <div class="contact-card">
+                <strong>Phone</strong>
+                <div class="muted">+234 813 6546 116</div>
+              </div>
+              <div class="contact-card">
+                <strong>Email</strong>
+                <div class="muted">acetaiwo8@gmail.com</div>
+              </div>
+            </div>
+
+            <div class="media-box">
+              <div class="eyebrow">Links</div>
+              <h3>Useful hyperlinks</h3>
+              <div class="contact-meta">
+                <a class="inline-link" href="projects.html">Browse projects</a>
+                <a class="inline-link" href="planner.html">Open planner</a>
+                <a class="inline-link" href="about.html">Read about me</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="shell footer-inner">
+          <div>
+            <strong>Ace Taiwo</strong>
+            <div class="muted">COS 106 term project portfolio</div>
+          </div>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="planner.html">Planner</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <button class="btn btn-soft back-to-top" type="button" data-back-to-top>Back to top</button>
+  </body>
+</html>

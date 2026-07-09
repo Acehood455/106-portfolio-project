@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ace Taiwo | Student Portfolio</title>
+    <meta
+      name="description"
+      content="Responsive student portfolio and academic management website built with HTML, CSS, and JavaScript."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index.html" aria-label="Ace Taiwo home">
+          <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span>Ace Taiwo</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <div class="nav-links">
+            <a class="nav-link" data-nav-link href="index.html">Home</a>
+            <a class="nav-link" data-nav-link href="about.html">About</a>
+            <a class="nav-link" data-nav-link href="projects.html">Projects</a>
+            <a class="nav-link" data-nav-link href="planner.html">Planner</a>
+            <a class="nav-link" data-nav-link href="contact.html">Contact</a>
+          </div>
+          <div class="nav-actions">
+            <button class="icon-button" type="button" data-theme-toggle aria-pressed="false">Dark Mode</button>
+            <button
+              class="menu-button"
+              type="button"
+              data-menu-button
+              aria-expanded="false"
+              aria-controls="mobile-panel"
+            >
+              Menu
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <div class="shell mobile-panel" id="mobile-panel" data-mobile-panel>
+        <div class="mobile-links">
+          <a class="nav-link" data-nav-link href="index.html">Home</a>
+          <a class="nav-link" data-nav-link href="about.html">About</a>
+          <a class="nav-link" data-nav-link href="projects.html">Projects</a>
+          <a class="nav-link" data-nav-link href="planner.html">Planner</a>
+          <a class="nav-link" data-nav-link href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page">
+      <section class="hero shell">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">Welcome to my portfolio</div>
+            <h1>
+              Building digital <span class="accent">experiences</span> that matter
+            </h1>
+            <p class="lead">
+              I am Ace Taiwo, a student developer focused on creating clean, modern, and responsive
+              websites. This portfolio presents my profile, projects, and academic planning tools in a
+              polished multi-page format for COS 106.
+            </p>
+
+            <div class="button-row">
+              <a class="btn btn-primary" href="projects.html">View Projects</a>
+              <a class="btn btn-outline" href="about.html">Read My Story</a>
+            </div>
+
+            <div class="pill-row" aria-label="Highlights">
+              <span class="pill">Responsive Design</span>
+              <span class="pill">HTML, CSS, JavaScript</span>
+              <span class="pill">Academic Planner</span>
+            </div>
+          </div>
+
+          <aside class="hero-panel reveal" aria-label="Profile summary">
+            <div class="portrait-wrap">
+              <div class="portrait">
+                <img src="assets/images/ProfilePic.png" alt="Portrait of Ace Taiwo" />
+              </div>
+              <div class="portrait-note">
+                <span>Student name: Ace Taiwo</span>
+                <span>Location: Jos, Plateau State</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section shell">
+        <div class="stat-grid">
+          <article class="stat-card reveal">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Multi-page sections</div>
+          </article>
+          <article class="stat-card reveal">
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Sample projects</div>
+          </article>
+          <article class="stat-card reveal">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Interactive planner</div>
+          </article>
+          <article class="stat-card reveal">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Plain HTML, CSS, JS</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shell">
+        <div class="section-heading reveal">
+          <div class="eyebrow">Quick overview</div>
+          <h2>Professional layout with a clean student focus</h2>
+          <p class="subheading">
+            The site keeps the same dark, indigo-accented visual language from the React portfolio, but
+            it now behaves like a traditional assignment-ready website with distinct pages and content.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <h3>About Me</h3>
+            <p>
+              Review my education, aspirations, technical skills, hobbies, and a short academic timeline.
+            </p>
+            <a class="inline-link" href="about.html">Go to About</a>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Projects</h3>
+            <p>
+              See three sample projects with images, descriptions, and links laid out in a polished card
+              design.
+            </p>
+            <a class="inline-link" href="projects.html">Go to Projects</a>
+          </article>
+          <article class="feature-card reveal">
+            <h3>Academic Planner</h3>
+            <p>
+              Add tasks, mark them complete, delete them, and keep the list saved with localStorage.
+            </p>
+            <a class="inline-link" href="planner.html">Go to Planner</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section shell">
+        <div class="two-col">
+          <article class="section-card reveal">
+            <div class="eyebrow">Biography</div>
+            <h2>Brief biography</h2>
+            <p class="subheading">
+              I am a disciplined and curious student with an interest in building useful web interfaces,
+              solving problems through code, and learning modern development workflows. I enjoy turning
+              ideas into practical digital experiences that feel polished and easy to use.
+            </p>
+            <div class="chip-row" style="margin-top: 18px;">
+              <span class="pill">Frontend development</span>
+              <span class="pill">Problem solving</span>
+              <span class="pill">Continuous learning</span>
+            </div>
+          </article>
+
+          <article class="section-card reveal">
+            <div class="eyebrow">Useful links</div>
+            <h2>Navigation shortcuts</h2>
+            <ul class="list">
+              <li><a class="inline-link" href="about.html">About me page</a></li>
+              <li><a class="inline-link" href="projects.html">Projects gallery</a></li>
+              <li><a class="inline-link" href="planner.html">Academic planner</a></li>
+              <li><a class="inline-link" href="contact.html">Contact form</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="shell footer-inner">
+          <div>
+            <strong>Ace Taiwo</strong>
+            <div class="muted">COS 106 term project portfolio</div>
+          </div>
+          <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="planner.html">Planner</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <button class="btn btn-soft back-to-top" type="button" data-back-to-top>Back to top</button>
+  </body>
+</html>
