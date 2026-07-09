@@ -141,9 +141,15 @@ textarea {
   color: white;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   box-shadow: 0 14px 40px rgba(91, 90, 247, 0.24);
-  font-size: 0.82rem;
-  font-weight: 900;
-  letter-spacing: -0.08em;
+  overflow: hidden;
+}
+
+.brand-mark img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transform: translateY(1px);
 }
 
 .nav {
